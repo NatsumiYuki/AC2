@@ -1,5 +1,5 @@
 .data 
-
+# NAO ESQUECER DE REFAZER ESSA FALTA O LOOP
 vetorA: .word 1, 2, 3, 4, 5
 vetorB: .word 10, 20, 30, 40, 50
 
@@ -18,6 +18,7 @@ main:
     li t3, 5
     li t4, 0
 
+# Descobrir se precisa desse load no t2 ou nao ja que esta vazia
     lw t0, 0(s0)
     lw t1, 4(s0)
     lw t2, 8(s0)
