@@ -1,7 +1,4 @@
 
-#  ATIVIDADE 1
-#  Somar os 3 elementos de um vetor e imprimir o resultado
-
 .data
 # A região .data guarda dados que podem ser lidos e modificados.
 # Aqui estamos declarando um vetor de 3 elementos.
