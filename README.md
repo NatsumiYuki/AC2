@@ -32,10 +32,10 @@ Environmental Calls: https://github.com/ThaumicMekanism/venus/wiki/Environmental
 | `a0–a7`  | argumentos e retorno de função/syscall                                |
 
 Loop
-    - beq = Branch if Equal (desvie se igual)
-    - bne = Branch if Not Equal (desvie se diferente)
-    - blt = Branch if Less Than (desvie se menor)
-    - ble = Branch if Less than or Equal (desvie se menor ou igual)
-    - bgt = Branch if Greater Than (desvie se maior)
+- beq = Branch if Equal (desvie se igual)
+- bne = Branch if Not Equal (desvie se diferente)
+- blt = Branch if Less Than (desvie se menor)
+- ble = Branch if Less than or Equal (desvie se menor ou igual)
+- bgt = Branch if Greater Than (desvie se maior)
 End-loop
 
