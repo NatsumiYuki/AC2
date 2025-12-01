@@ -5,7 +5,7 @@ Using RISC-V venus and RISC-V support on VSCODE
 Environmental Calls: https://github.com/ThaumicMekanism/venus/wiki/Environmental-Calls
 
 
-| **Comando** | **Função**                                                    |
+| Comando     | Função                                                   |
 | ----------- | ------------------------------------------------------------- |
 | `.data`     | Inicia a seção de dados.                                      |
 | `.word`     | Define palavras (valores de 32 bits) na memória.              |
@@ -22,12 +22,12 @@ Environmental Calls: https://github.com/ThaumicMekanism/venus/wiki/Environmental
 | `j`         | Salto incondicional para um rótulo.                           |
 | `ecall`     | Chamada de sistema (imprimir, encerrar, etc.).                |
 
-| Grupo      | Para que serve                                                        |
-| ---------- | --------------------------------------------------------------------- |
-| **zero**   | valor constante 0                                                     |
-| **ra**     | retorno de função                                                     |
-| **sp**     | pilha                                                                 |
-| **t0–t6**  | trabalho rápido, valores temporários                                  |
-| **s0–s11** | valores que não podem ser perdidos (endereços, variáveis importantes) |
-| **a0–a7**  | argumentos e retorno de função/syscall                                |
+| Grupo    | Para que serve                                                      |
+| ---------| ------------------------------------------------------------------- |
+| `zero`   | valor constante 0                                                     |
+| `ra`     | retorno de função                                                     |
+| `sp`     | pilha                                                                 |
+| `t0–t6`  | trabalho rápido, valores temporários                                  |
+| `s0–s11` | valores que não podem ser perdidos (endereços, variáveis importantes) |
+| `a0–a7`  | argumentos e retorno de função/syscall                                |
 
