@@ -5,30 +5,25 @@ Using RISC-V venus and RISC-V support on VSCODE
 Environmental Calls: https://github.com/ThaumicMekanism/venus/wiki/Environmental-Calls
 
 
-### Comando	Função
-Registrador	O que ele faz	Explicação simples
-- s0	endereço do vetor1	aponta para vetor1
-- s1	endereço do vetor2	aponta para vetor2
-- s2	endereço do vetor resultado	aponta para resultado
-- t0	índice i	controla qual posição do vetor está sendo acessada
-- t1	offset = i × 4	serve para calcular o endereço do elemento
-- t2	endereço temporário	usado para calcular o endereço exato do elemento
-- t3	valor de vetor1[i]	guarda o elemento do vetor1
-- t4	valor de vetor2[i]	guarda o elemento do vetor2
-- t5	soma total	acumula a soma de todos os elementos do vetor resultado
-- t6	soma atual	guarda a soma vetor1[i] + vetor2[i]
-- t7	constante 5	limite do loop (5 elementos)
+| **Comando**        | **Função**                                                              |
+| ------------------ | ----------------------------------------------------------------------- |
+| `.data`            | Inicia a seção de dados do programa (variáveis armazenadas na memória). |
+| `.word 10, 20, 30` | Aloca três palavras na memória com valores 10, 20 e 30.                 |
+| `.text`            | Inicia a seção de código (instruções do programa).                      |
+| `la s0, vetor`     | Carrega em **s0** o endereço base do vetor.                             |
+| `lw t0, 0(s0)`     | Carrega o valor na posição **0** do vetor para o registrador **t0**.    |
+| `lw t1, 4(s0)`     | Carrega o valor na posição **1** (4 bytes) do vetor para **t1**.        |
+| `lw t2, 8(s0)`     | Carrega o valor na posição **2** (8 bytes) do vetor para **t2**.        |
+| `addi t0, t0, 1`   | Soma 1 ao valor armazenado em **t0**.                                   |
+| `addi t1, t1, 1`   | Soma 1 ao valor armazenado em **t1**.                                   |
+| `addi t2, t2, 1`   | Soma 1 ao valor armazenado em **t2**.                                   |
+| `sw t0, 0(s0)`     | Armazena o conteúdo de **t0** de volta na primeira posição do vetor.    |
+| `sw t1, 4(s0)`     | Armazena o conteúdo de **t1** na segunda posição.                       |
+| `sw t2, 8(s0)`     | Armazena o conteúdo de **t2** na terceira posição.                      |
+| `li a0, 1`         | Define o código da syscall **1 (print integer)**.                       |
+| `mv a1, t0`        | Move o valor de **t0** para **a1**, parâmetro da syscall.               |
+| `ecall`            | Executa a syscall configurada em **a0**.                                |
+| `li a0, 11`        | Syscall **11 (print char)**.                                            |
+| `li a1, 10`        | Caractere ASCII 10 = **quebra de linha** (`\n`).                        |
+| `li a0, 10`        | Syscall **10 (encerrar programa)**.                                     |
 
-2. INSTRUÇÕES DO ASSEMBLY
-- Comando	O que faz	Explicação simples
-- la	load address	pega o endereço de um vetor na memória
-- lw	load word	carrega um número do vetor
-- sw	store word	salva um número no vetor
-- li	load immediate	coloca um número direto no registrador
-- add	soma registradores	X = A + B
-- addi	soma imediata	X = A + constante
-- slli	shift left logical ×2	faz multiplicação por 4 (i * 4)
-- blt	branch if less than	vai para o loop enquanto i < 5
-- j	jump	pula para uma parte do código
-- mv	move registradores	copia de um registrador para outro
-- ecall	syscall	imprime, encerra programa etc
