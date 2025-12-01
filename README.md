@@ -16,6 +16,18 @@ Environmental Calls: https://github.com/ThaumicMekanism/venus/wiki/Environmental
 | `addi`      | Soma um valor imediato a um registrador.                      |
 | `mv`        | Copia o valor de um registrador para outro.                   |
 | `li`        | Carrega um valor imediato em um registrador.                  |
-| `ecall`     | Executa uma chamada de sistema (syscall).                     |
+| `add`       | Soma dois registradores.                                      |
+| `slli`      | Multiplica por 2ⁿ (deslocamento lógico à esquerda). Ex: `i << 2`. |
+| `blt`       | Desvia se um valor for menor que outro (`if a < b`).          |
+| `j`         | Salto incondicional para um rótulo.                           |
+| `ecall`     | Chamada de sistema (imprimir, encerrar, etc.).                |
 
+| Grupo      | Para que serve                                                        |
+| ---------- | --------------------------------------------------------------------- |
+| **zero**   | valor constante 0                                                     |
+| **ra**     | retorno de função                                                     |
+| **sp**     | pilha                                                                 |
+| **t0–t6**  | trabalho rápido, valores temporários                                  |
+| **s0–s11** | valores que não podem ser perdidos (endereços, variáveis importantes) |
+| **a0–a7**  | argumentos e retorno de função/syscall                                |
 
